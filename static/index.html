@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Charts</title>
+
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/d3.css" />
+	<script type="text/javascript" src="js/libs/d3.v2.min.js"></script>
+	<script type="text/javascript" src="js/libs/nv.d3.js"></script>
+	<script type="text/javascript" src="js/clusto.js"></script>
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<a class="brand" href="#">Uber</a>
+			<ul class="nav">
+				<li class="active"><a href="#">Metrics</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span8" id="chart"></div>
+		<form class="span4 well">
+			<h6>Chart settings</h6>
+			<label>Time range</label>
+			<select id="chart-timerange">
+				<!-- these are time,resolution pairs, all values in seconds -->
+				<option value="7200,60">2 hours</option>
+				<option value="172800,900" selected>2 days</option>
+				<option value="604800,3600">1 week</option>
+				<option value="2592000,7200">1 month</option>
+			</select>
+
+			<label>Metric</label>
+			<select id="chart-metric">
+				<option value="cpu.user">CPU</option>
+				<option value="cpu.iowait">I/O wait</option>
+				<option value="memory.active_memory">Memory</option>
+				<option value="network.tcp_sockets">TCP sockets</option>
+			</select>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
